@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -z "$0" ]; then
+if [ -z "$1" ]; then
   echo "参数错误. createReactComponent.sh 组件名"
   exit
 fi
@@ -10,7 +10,7 @@ echo "当前路径:${curr_path}"
 
 # 模板路径
 template_path=$(dirname $0)
-cd ./${template_path}
+cd ${template_path}
 template_path=$(pwd)
 echo "模板路径:${template_path}"
 
