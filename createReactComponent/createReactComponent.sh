@@ -40,16 +40,25 @@ function copyTemplate() {
 
 # 修改文件内容
 function updateTemplate() {
+  file_path=${curr_path}/${component_name}/${component_name}.jsx
   # 组件名
-  sed -i "" "s/Template/${component_name}/g" ${curr_path}/${component_name}/${component_name}.jsx
+  sed -i "" "s/Template/${component_name}/g" ${file_path}
   # 组件注释
-  sed -i "" "s/NAME/${author}/g" ${curr_path}/${component_name}/${component_name}.jsx
-  sed -i "" "s/DATE/${create_date}/g" ${curr_path}/${component_name}/${component_name}.jsx
-  sed -i "" "s/DESCRIPTION/${description}/g" ${curr_path}/${component_name}/${component_name}.jsx
+  sed -i "" "s/NAME/${author}/g" ${file_path}
+  sed -i "" "s/DATE/${create_date}/g" ${file_path}
+  if [ -n "${description}" ]; then
+    sed -i "" "s/DESCRIPTION/${description}/g" ${file_path}
+  else
+    sed -i "" "s/DESCRIPTION//g" ${file_path}
+  fi
 }
 
 # 复制模板
-mkdir ${curr_path}/${component_name} \
-&& copyTemplate \
-&& updateTemplate \
-&& echo "组件: ${component_name} 创建完成"
+if [ -d "${curr_path}/${component_name}" ]; then
+  echo "组件创建失败,已存在${component_name}目录"
+else
+  mkdir ${curr_path}/${component_name} \
+  && copyTemplate \
+  && updateTemplate \
+  && echo "组件: ${component_name} 创建完成"
+fi
