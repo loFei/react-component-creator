@@ -17,4 +17,5 @@ fi
 source ~/.bash_profile
 # source ~/.zshrc
 
-echo "安装完成. 创建react组件方法: crc 组件名"
+echo "安装完成.创建react组件方法: "
+echo "crc 组件类型(-f:有状态组件, -l:无状态组件) 组件名称 组件说明"

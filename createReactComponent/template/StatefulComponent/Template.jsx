@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import styles from './Template.scss';
 
 /**
- * @author: NAME
- * @date: DATE
- * @description: DESCRIPTION
+ * @author: _NAME_
+ * @date: _DATE_
+ * @description: _DESCRIPTION_
  */
-class Template extends Component {
+class _COMPONENT_NAME_ extends Component {
   constructor(props){
     super(props);
   }
@@ -18,4 +18,4 @@ class Template extends Component {
   }
 };
 
-export default Template;
+export default _COMPONENT_NAME_;
