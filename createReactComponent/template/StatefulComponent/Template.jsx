@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Template.scss';
+import styles from './_COMPONENT_NAME_.scss';
 
 /**
  * @author: _NAME_
